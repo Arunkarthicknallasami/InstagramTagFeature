@@ -21,10 +21,10 @@ import android.os.Parcelable;
 
 public class TagToBeTagged implements Parcelable {
     private String unique_tag_id;
-    private Double x_co_ord;
-    private Double y_co_ord;
+    private float x_co_ord;
+    private float y_co_ord;
 
-    public TagToBeTagged(String unique_tag_id, Double x_co_ord, Double y_co_ord) {
+    public TagToBeTagged(String unique_tag_id, float x_co_ord, float y_co_ord) {
         this.unique_tag_id = unique_tag_id;
         this.x_co_ord = x_co_ord;
         this.y_co_ord = y_co_ord;
@@ -39,20 +39,22 @@ public class TagToBeTagged implements Parcelable {
         this.unique_tag_id = unique_tag_id;
     }
 
-    public Double getX_co_ord() {
+    private TagToBeTagged(Parcel in) {
+        this.unique_tag_id = in.readString();
+        this.x_co_ord = (float) in.readValue(float.class.getClassLoader());
+        this.y_co_ord = (float) in.readValue(float.class.getClassLoader());
+    }
+
+    public float getX_co_ord() {
         return x_co_ord;
     }
 
-    public void setX_co_ord(Double x_co_ord) {
+    public void setX_co_ord(float x_co_ord) {
         this.x_co_ord = x_co_ord;
     }
 
-    public Double getY_co_ord() {
+    public float getY_co_ord() {
         return y_co_ord;
-    }
-
-    public void setY_co_ord(Double y_co_ord) {
-        this.y_co_ord = y_co_ord;
     }
 
 
@@ -68,10 +70,8 @@ public class TagToBeTagged implements Parcelable {
         dest.writeValue(this.y_co_ord);
     }
 
-    private TagToBeTagged(Parcel in) {
-        this.unique_tag_id = in.readString();
-        this.x_co_ord = (Double) in.readValue(Double.class.getClassLoader());
-        this.y_co_ord = (Double) in.readValue(Double.class.getClassLoader());
+    public void setY_co_ord(float y_co_ord) {
+        this.y_co_ord = y_co_ord;
     }
 
     public static final Creator<TagToBeTagged> CREATOR =

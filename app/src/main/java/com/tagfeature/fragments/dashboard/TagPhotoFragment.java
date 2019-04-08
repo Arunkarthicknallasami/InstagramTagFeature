@@ -38,7 +38,6 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
-
 import com.tagfeature.InstaTagApplication;
 import com.tagfeature.R;
 import com.tagfeature.adapters.SomeOneAdapter;
@@ -62,7 +61,7 @@ public class TagPhotoFragment extends Fragment implements SomeOneClickListener, 
     private RecyclerView mRecyclerViewSomeOneToBeTagged;
     private LinearLayout mHeaderSomeOneToBeTagged, mHeaderSearchSomeOne;
     private TextView mTapPhotoToTagSomeOneTextView;
-    private int mAddTagInX, mAddTagInY;
+    private float mAddTagInX, mAddTagInY;
     private EditText mEditSearchForSomeOne;
     private SomeOneAdapter mSomeOneAdapter;
     private final ArrayList<SomeOne> mSomeOnes = new ArrayList<>();
@@ -193,7 +192,7 @@ public class TagPhotoFragment extends Fragment implements SomeOneClickListener, 
 
     private final InstaTag.TaggedImageEvent taggedImageEvent = new InstaTag.TaggedImageEvent() {
         @Override
-        public void singleTapConfirmedAndRootIsInTouch(final int x, final int y) {
+        public void singleTapConfirmedAndRootIsInTouch(final float x, final float y) {
             getActivity().runOnUiThread(new Runnable() {
                 @Override
                 public void run() {

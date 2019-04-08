@@ -161,7 +161,7 @@ public class TaggedPhotoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
         private InstaTag.TaggedImageEvent taggedImageEvent = new InstaTag.TaggedImageEvent() {
             @Override
-            public void singleTapConfirmedAndRootIsInTouch(int x, int y) {
+            public void singleTapConfirmedAndRootIsInTouch(float x, float y) {
 
             }
 

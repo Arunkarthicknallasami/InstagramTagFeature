@@ -45,7 +45,6 @@ import com.tagfeature.models.TaggedPhoto;
 import com.tagfeature.utilities.CommonUtil;
 import com.tagfeature.utilities.SomeOneData;
 
-
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -57,7 +56,7 @@ public class TagPhotoActivity extends AppCompatActivity implements SomeOneClickL
     private RecyclerView mRecyclerViewSomeOneToBeTagged;
     private LinearLayout mHeaderSomeOneToBeTagged, mHeaderSearchSomeOne;
     private TextView mTapPhotoToTagSomeOneTextView;
-    private int mAddTagInX, mAddTagInY;
+    private float mAddTagInX, mAddTagInY;
     private EditText mEditSearchForSomeOne;
     private SomeOneAdapter mSomeOneAdapter;
     private final ArrayList<SomeOne> mSomeOnes = new ArrayList<>();
@@ -150,7 +149,7 @@ public class TagPhotoActivity extends AppCompatActivity implements SomeOneClickL
 
     private final InstaTag.TaggedImageEvent taggedImageEvent = new InstaTag.TaggedImageEvent() {
         @Override
-        public void singleTapConfirmedAndRootIsInTouch(final int x, final int y) {
+        public void singleTapConfirmedAndRootIsInTouch(final float x, final float y) {
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
