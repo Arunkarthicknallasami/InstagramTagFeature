@@ -21,8 +21,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.ImageView;
 
-import com.tagfeature.instatag.TagOnTouchListener;
 import com.tagfeature.R;
+import com.tagfeature.instatag.TagOnTouchListener;
 
 public class DragTestActivity extends Activity {
 

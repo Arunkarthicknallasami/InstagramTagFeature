@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainframe"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
@@ -16,6 +17,7 @@
             android:rotation="180" />
 
         <LinearLayout
+            android:layout_marginTop="-2dp"
             android:id="@+id/indicator_container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -29,6 +31,7 @@
                 android:background="#000"
                 android:ellipsize="end"
                 android:maxLines="1"
+                android:text="Hemant Sharma"
                 android:minWidth="12dp"
                 android:paddingLeft="8dp"
                 android:paddingTop="4dp"
@@ -38,6 +41,14 @@
                 android:textSize="13sp" />
 
         </LinearLayout>
+
+        <com.tagfeature.instatag.ArrowView
+            android:id="@+id/indicator_arrow_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="-2dp"
+            android:visibility="gone" />
 
     </LinearLayout>
 
